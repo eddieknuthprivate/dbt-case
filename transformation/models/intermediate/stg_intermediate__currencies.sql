@@ -5,4 +5,7 @@
     )
 }}
 
-select * from {{ ref("currencies") }}
+select 
+    currency_iso_code
+    , currency  
+from {{ ref("currencies") }}

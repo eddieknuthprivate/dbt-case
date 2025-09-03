@@ -26,8 +26,8 @@ This file contains the exploration of the case study of the given data.
 
 - loans entity:
   The format in column of raw.loans is mixed. There are '/' and '.' in the date strings. My solution is to replace the '/' and also to take care of the different positions of months and days.
-  I have detected that one ntry has a missing loan type. For the rest of the columns I have added 'not null' tests.
-  I have added column descriptions.
+  I have detected that one ntry has a missing loan type. For the rest of the columns I have added 'not null' tests. In addition I have added a value check for the column loan_status. 
+  I have added column descriptions. I changed the data type for loan_amount to float, interest_rate to float, approval_rejection_date to date.
 
 - transaction entity:
   I have added new 'not null' tests, a foreign_key to the account entity and comments.

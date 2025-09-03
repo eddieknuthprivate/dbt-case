@@ -6,6 +6,7 @@ select
     accounts.customer_id
     , transactions.account_id
     , transactions.transaction_type
+    , fx_rates.fx_rate_date
     , sum(fx_rates.fx_rate * transactions.transaction_amount) as sum_transaction_amount
     , transactions.transaction_currency
 from {{ ref("stg_intermediate__transactions") }} as transactions
@@ -13,4 +14,4 @@ inner join {{ ref("stg_intermediate__fx_rates") }} as fx_rates
     on transactions.transaction_currency = fx_rates.currency_iso_code
 inner join {{ ref("stg_intermediate__accounts") }} as accounts
     on transactions.account_id = accounts.account_id
-group by accounts.customer_id,transactions.account_id, transactions.transaction_type, transactions.transaction_currency
+group by accounts.customer_id,transactions.account_id, transactions.transaction_type, fx_rates.fx_rate_date, transactions.transaction_currency

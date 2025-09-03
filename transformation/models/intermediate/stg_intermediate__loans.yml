@@ -22,7 +22,7 @@ models:
           - unique
 
       - name: loan_amount
-        data_type: varchar
+        data_type: float
         description: "The loan amount"
         tests:
           - not_null
@@ -32,7 +32,7 @@ models:
         description: "The type of the loan."
 
       - name: interest_rate
-        data_type: varchar
+        data_type: float
         description: "Contains the interest rate."
         tests:
           - not_null
@@ -51,6 +51,8 @@ models:
 
       - name: loan_status
         data_type: varchar
-        description: "Contains the status of the loan."
+        description: "Contains the status like 'approved' or 'closed' of the loan."
         tests:
           - not_null
+          - accepted_values:
+              values: ['approved', 'closed', 'rejected']

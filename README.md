@@ -9,8 +9,9 @@ Thank you for all the work with the study.
 The following changes are made:
 - For all the fixes, constraints, comments and tests see EXPLORATION.md
 - Data enrichment with help of currencies.csv
-- I have implemented a few incremental models for the intermediate layer (data warehouse)
-- I have created a new model in the reporting layer
+- Implementation of incremental models for the intermediate layer (data warehouse)
+- New model in the reporting layer
+- Created sql-tests for the models in the intermediate and reporting layer 
 - The data catalog is generated here /workspaces/dbt-case/transformation/target/catalog.json
 
 Have a nice day,
