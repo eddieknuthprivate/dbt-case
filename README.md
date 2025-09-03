@@ -4,32 +4,19 @@
 
 Dear applicant,
 
-Thank you for taking your time and agreeing to work on a short case study for us.
+Thank you for all the work with the study.
 
-In order not to take too much of your time, we have prepared this repository for you. We propose a folder structure and
-provide some initial code
-snippets as well as a database and one CSV file, that should get you going very quickly. Depending on your
-prior knowledge, we estimate a working effort of
-1h - 4h.
+The following changes are made:
+- For all the fixes, constraints, comments and tests see EXPLORATION.md
+- Data enrichment with help of currencies.csv
+- I have implemented a few incremental models for the intermediate layer (data warehouse)
+- I have created a new model in the reporting layer
+- The data catalog is generated here /workspaces/dbt-case/transformation/target/catalog.json
 
-The goal of this test is to evaluate your understanding of SQL, dbt and data modeling concepts.
+Have a nice day,
+Eddie Knuth
 
-Once you feel ready - please not later than one day before your second interview - send us a link to your own
-repository. In the interview, you will guide us briefly through your work. Your participation is very much appreciated!
-
-In case you have any problems, questions or feedback, please don't hesitate to approach us right away.
-
-Good luck and have fun,
-
-Your Varengold data team
-
-[Contact us](mailto:d.maas@varengold.de)
-
-### Prerequisites
-
-- Docker
-- Your favorite IDE
-- Git
+[Contact us](mailto:eddie.knuth@t-online.de)
 
 ## Case Study
 
@@ -46,28 +33,28 @@ help...
 
 **Setup:**
 
-1. [ ] Please create a repository and commit this content (or clone and change remote)
-2. [ ] Start running the devcontainer and set up your remote connection
+1. [X] Please create a repository and commit this content (or clone and change remote)
+2. [X] Start running the devcontainer and set up your remote connection
 
 **Exploration:**
 
-- [ ] Please showcase an exploration of the provided data and your findings
+- [X] Please showcase an exploration of the provided data and your findings
 
 **Data Loading / Transformation:**
 
-- [ ] Please load the provided CSV file to enrich our data
-- [ ] Please create a materialized table into the reporting schema, that sums up all transactions in EUR (Euro) per
+- [X] Please load the provided CSV file to enrich our data
+- [X] Please create a materialized table into the reporting schema, that sums up all transactions in EUR (Euro) per
   customer, account, branch and date. To simplify everything, the provided exchange rate table should be used for all
   dates.
 
 **Data Quality / Testing:**
 
-- [ ] Please make use of tests. Use dbt's testing functionality to ensure integrity of your models and check for data
+- [X] Please make use of tests. Use dbt's testing functionality to ensure integrity of your models and check for data
   anomalies.
 
 **Data Catalog:**
 
-- [ ] Please generate a data catalog
+- [X] Please generate a data catalog
 
 **Submission:**
 

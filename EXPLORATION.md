@@ -7,8 +7,6 @@ This file contains the exploration of the case study of the given data.
 
 ## Case Study
 
-- One suggestion for an improvement for other studies is to pay attention to the libraries for Macbook users. With duckdb, I got an error at the beginning.
-
 - customers entity:
   The unique check of the model staging.stg_raw_staging__customers shows 5000 results. 50 percent!
 
@@ -17,13 +15,14 @@ This file contains the exploration of the case study of the given data.
   I have added 3 new 'not null' checks and comments.
 
 - account entity:
-  There is a problem with the date account_opening_date. I got an error when selecting the table.
+  There is a problem with the date account_opening_date. I replaced empty strings with null values.
 
   I have added 2 new 'not null' checks and comments.
 
 - fx_rates entity:
   I the table stg_raw_staging__fx_rates the data types of the columns fx_rate and fx_rate_date seems to be wrong. I changed them. 
   In addition I have added 2 new 'not null' checks and comments for the columns.
+  Ichanged the data type for stg_reporting__aggregate_transactions from varchar to float.
 
 - loans entity:
   The format in column of raw.loans is mixed. There are '/' and '.' in the date strings. My solution is to replace the '/' and also to take care of the different positions of months and days.
@@ -32,6 +31,7 @@ This file contains the exploration of the case study of the given data.
 
 - transaction entity:
   I have added new 'not null' tests, a foreign_key to the account entity and comments.
+  I changed the foreign constraint to the new model currencies.
 
 - currency entity:
   I loaded the csv file into the database with seed.
@@ -42,3 +42,5 @@ This file contains the exploration of the case study of the given data.
 
   select currency_iso_code,count(*) from main.currencies group by currency_iso_code having count(*)>1;
   --> (none)=12 and USD=2
+
+- One suggestion for an improvement for other studies is to pay attention to the libraries for Macbook users. With duckdb, I got an error at the beginning.

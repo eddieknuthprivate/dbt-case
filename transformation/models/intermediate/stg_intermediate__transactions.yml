@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_intermediate__transactions
+    description: "This table contains the transactions related to the accounts."
+    columns:
+      - name: transaction_id
+        data_type: integer
+        description: "The unique identifier of the transactions."
+        constraints:
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+
+      - name: transaction_date
+        data_type: date
+        description: "Contains the date of the transaction."
+        tests:
+          - not_null
+
+      - name: account_id
+        data_type: integer
+        description: "The account_id related to the account entity."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_intermediate__accounts')
+            to_columns: account_id
+        tests:
+          - not_null
+
+      - name: transaction_type
+        data_type: varchar
+        description: "Contains the type of transaction"
+        tests:
+          - not_null
+
+      - name: transaction_amount
+        data_type: float
+        description: "Contains the amount of the transaction."
+        tests:
+          - not_null
+
+      - name: transaction_currency
+        data_type: varchar
+        description: "The account_id related to the currency entity."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_intermediate__currencies')
+            to_columns: currency_iso_code
+        tests:
+          - not_null

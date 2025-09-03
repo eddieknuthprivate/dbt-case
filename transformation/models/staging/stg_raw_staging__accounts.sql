@@ -12,7 +12,7 @@ renamed as (
         account_id,
         customer_id,
         account_type,
-        strptime(account_opening_date, '%d.%m.%Y') as account_opening_date
+        strptime(replace(account_opening_date, '', null), '%d.%m.%Y') as account_opening_date
 
     from source
 

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_intermediate__accounts
+    description: "This incremental table contains account information of the accounts."
+    columns:
+      - name: account_id
+        data_type: integer
+        description: "Contains the primary key."
+        constraints:
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        data_type: integer
+        description: "The identifier for the customer"
+        tests:
+          - not_null
+
+      - name: account_type
+        data_type: varchar
+        description: "Contains the account type."
+        tests:
+          - not_null
+
+      - name: account_opening_date
+        data_type: date
+        description: "The account opening date."

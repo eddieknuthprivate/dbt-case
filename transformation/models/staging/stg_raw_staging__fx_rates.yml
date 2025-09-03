@@ -7,12 +7,16 @@ models:
         description: "Unique identifier of the currency iso code."
         constraints:
           - type: primary_key
+          - type: foreign_key
+            to: ref('currencies')
+            to_columns: currency_iso_code
+
         tests:
           - not_null
           - unique
 
       - name: fx_rate
-        data_type: varchar
+        data_type: float
         description: "Contains the fx rate."
         tests:
           - not_null

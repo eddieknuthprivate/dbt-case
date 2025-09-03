@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_raw_staging__customers
-    description: ""
+    description: "This model contains customer informations e.g. name and age."
     columns:
       - name: customer_id
         data_type: integer

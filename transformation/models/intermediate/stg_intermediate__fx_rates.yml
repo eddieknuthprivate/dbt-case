@@ -1,0 +1,27 @@
+models:
+  - name: stg_intermediate__fx_rates
+    description: "This table contains the foreign exchange rates."
+    columns:
+      - name: currency_iso_code
+        data_type: varchar
+        description: "Unique identifier of the currency iso code."
+        constraints:
+          - type: primary_key
+          - type: foreign_key
+            to: ref('stg_intermediate__currencies')
+            to_columns: currency_iso_code
+        tests:
+          - not_null
+          - unique
+
+      - name: fx_rate
+        data_type: float
+        description: "Contains the fx rate."
+        tests:
+          - not_null
+
+      - name: fx_rate_date
+        data_type: date
+        description: "Contains the fx rate date."
+        tests:
+          - not_null

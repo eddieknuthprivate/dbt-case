@@ -11,7 +11,7 @@ renamed as (
         transaction_date,
         account_id,
         transaction_type,
-        transaction_amount,
+        cast(replace(transaction_amount,',','.') as float) as transaction_amount,
         transaction_currency
 
     from source

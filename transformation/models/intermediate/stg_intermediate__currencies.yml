@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_intermediate__currencies
+    description: "This table contains currencies with iso code."
+    columns:
+      - name: currency_iso_code
+        data_type: varchar
+        description: "Contains the unique identifier of the currency (iso)."
+        constraints:
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+
+      - name: currency
+        data_type: varchar
+        description: "Description of the currency."
+        tests:
+          - not_null

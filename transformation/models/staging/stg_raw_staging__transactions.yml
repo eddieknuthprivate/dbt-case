@@ -31,12 +31,12 @@ models:
 
       - name: transaction_type
         data_type: varchar
-        description: "COntains the type of transaction"
+        description: "Contains the type of transaction"
         tests:
           - not_null
 
       - name: transaction_amount
-        data_type: varchar
+        data_type: float
         description: "Contains the amount of the transaction."
         tests:
           - not_null
@@ -46,7 +46,7 @@ models:
         description: "The account_id related to the currency entity."
         constraints:
           - type: foreign_key
-            to: ref('stg_raw_staging__fx_rates')
+            to: ref('currencies')
             to_columns: currency_iso_code
         tests:
           - not_null

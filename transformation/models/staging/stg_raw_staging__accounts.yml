@@ -16,6 +16,10 @@ models:
       - name: customer_id
         data_type: integer
         description: "The identifier for the customer"
+        constraints:
+          - type: foreign_key
+            to: ref('stg_raw_staging__customers')
+            to_columns: customer_id
         tests:
           - not_null
 

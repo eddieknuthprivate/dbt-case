@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_intermediate__loans
+    description: "The table contains the loans."
+    columns:
+      - name: customer_id
+        data_type: integer
+        description: "Customer_id with refernence to the customer entity."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_stg_intermediate__customers')
+            to_columns: customer_id
+
+      - name: loan_id
+        data_type: integer
+        description: "Unique identifier of the loans."
+        constraints:
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+
+      - name: loan_amount
+        data_type: varchar
+        description: "The loan amount"
+        tests:
+          - not_null
+
+      - name: loan_type
+        data_type: varchar
+        description: "The type of the loan."
+
+      - name: interest_rate
+        data_type: varchar
+        description: "Contains the interest rate."
+        tests:
+          - not_null
+
+      - name: loan_term
+        data_type: integer
+        description: "Contains the laon term."
+        tests:
+          - not_null
+
+      - name: approval_rejection_date
+        data_type: date
+        description: "The approval rejection date."
+        tests:
+          - not_null
+
+      - name: loan_status
+        data_type: varchar
+        description: "Contains the status of the loan."
+        tests:
+          - not_null
