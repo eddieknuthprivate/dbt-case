@@ -7,7 +7,7 @@ select
     , transactions.account_id
     , transactions.transaction_type
     , fx_rates.fx_rate_date
-    , sum(fx_rates.fx_rate * transactions.transaction_amount) as sum_transaction_amount
+    , round(sum(transactions.transaction_amount / fx_rates.fx_rate), 2) as sum_transaction_amount
     , transactions.transaction_currency
 from {{ ref("stg_intermediate__transactions") }} as transactions
 inner join {{ ref("stg_intermediate__fx_rates") }} as fx_rates
