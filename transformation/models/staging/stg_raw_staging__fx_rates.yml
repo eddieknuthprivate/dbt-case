@@ -1,10 +1,10 @@
 models:
   - name: stg_raw_staging__fx_rates
-    description: ""
+    description: "This table contains the foreign exchange rates."
     columns:
       - name: currency_iso_code
         data_type: varchar
-        description: ""
+        description: "Unique identifier of the currency iso code."
         constraints:
           - type: primary_key
         tests:
@@ -12,9 +12,13 @@ models:
           - unique
 
       - name: fx_rate
-        data_type: date
-        description: ""
+        data_type: varchar
+        description: "Contains the fx rate."
+        tests:
+          - not_null
 
       - name: fx_rate_date
-        data_type: varchar
-        description: ""
+        data_type: date
+        description: "Contains the fx rate date."
+        tests:
+          - not_null

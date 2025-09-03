@@ -6,7 +6,7 @@ models:
     columns:
       - name: customer_id
         data_type: integer
-        description: ""
+        description: "Unique identifier of the customer."
         constraints:
           - type: primary_key
         tests:
@@ -15,12 +15,18 @@ models:
 
       - name: firstname
         data_type: varchar
-        description: ""
+        description: "First name of the customer."
+        tests:
+          - not_null
 
       - name: lastname
         data_type: varchar
-        description: ""
+        description: "Last name of the customer."
+        tests:
+          - not_null
 
       - name: age
         data_type: integer
-        description: ""
+        description: "Contains the age of the customer."
+        tests:
+          - not_null

@@ -2,11 +2,11 @@ version: 2
 
 models:
   - name: stg_raw_staging__loans
-    description: ""
+    description: "The table contains the loans."
     columns:
       - name: customer_id
         data_type: integer
-        description: ""
+        description: "Customer_id with refernence to the customer entity."
         constraints:
           - type: foreign_key
             to: ref('stg_raw_staging__customers')
@@ -14,7 +14,7 @@ models:
 
       - name: loan_id
         data_type: integer
-        description: ""
+        description: "Unique identifier of the loans."
         constraints:
           - type: primary_key
         tests:
@@ -23,24 +23,34 @@ models:
 
       - name: loan_amount
         data_type: varchar
-        description: ""
+        description: "The loan amount"
+        tests:
+          - not_null
 
       - name: loan_type
         data_type: varchar
-        description: ""
+        description: "The type of the loan."
 
       - name: interest_rate
         data_type: varchar
-        description: ""
+        description: "Contains the interest rate."
+        tests:
+          - not_null
 
       - name: loan_term
         data_type: integer
-        description: ""
+        description: "Contains the laon term."
+        tests:
+          - not_null
 
       - name: approval_rejection_date
         data_type: date
-        description: ""
+        description: "The approval rejection date."
+        tests:
+          - not_null
 
       - name: loan_status
         data_type: varchar
-        description: ""
+        description: "Contains the status of the loan."
+        tests:
+          - not_null

@@ -2,11 +2,11 @@ version: 2
 
 models:
   - name: stg_raw_staging__accounts
-    description: ""
+    description: "This table contains account information of the customers."
     columns:
       - name: account_id
         data_type: integer
-        description: ""
+        description: "Contains the primary key."
         constraints:
           - type: primary_key
         tests:
@@ -15,12 +15,16 @@ models:
 
       - name: customer_id
         data_type: integer
-        description: ""
+        description: "The identifier for the customer"
+        tests:
+          - not_null
 
       - name: account_type
         data_type: varchar
-        description: ""
+        description: "Contains the account type."
+        tests:
+          - not_null
 
       - name: account_opening_date
         data_type: date
-        description: ""
+        description: "The account opening date."

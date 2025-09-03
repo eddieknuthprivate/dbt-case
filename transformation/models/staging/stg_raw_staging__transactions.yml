@@ -2,11 +2,11 @@ version: 2
 
 models:
   - name: stg_raw_staging__transactions
-    description: ""
+    description: "This table contains the transactions related to the accounts."
     columns:
       - name: transaction_id
         data_type: integer
-        description: ""
+        description: "The unique identifier of the transactions."
         constraints:
           - type: primary_key
         tests:
@@ -15,24 +15,38 @@ models:
 
       - name: transaction_date
         data_type: date
-        description: ""
+        description: "Contains the date of the transaction."
+        tests:
+          - not_null
 
       - name: account_id
         data_type: integer
-        description: ""
+        description: "The account_id related to the account entity."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_raw_staging__accounts')
+            to_columns: account_id
+        tests:
+          - not_null
 
       - name: transaction_type
         data_type: varchar
-        description: ""
+        description: "COntains the type of transaction"
+        tests:
+          - not_null
 
       - name: transaction_amount
         data_type: varchar
-        description: ""
+        description: "Contains the amount of the transaction."
+        tests:
+          - not_null
 
       - name: transaction_currency
         data_type: varchar
-        description: ""
+        description: "The account_id related to the currency entity."
         constraints:
           - type: foreign_key
             to: ref('stg_raw_staging__fx_rates')
             to_columns: currency_iso_code
+        tests:
+          - not_null
