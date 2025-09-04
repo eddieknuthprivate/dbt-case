@@ -15,18 +15,18 @@ I found a lot of things in the given data and structure. Here are the main point
   select count(distinct customer_id),count(*) from staging.stg_raw_staging__customers;
   --> 5000 and 10000
 
-  I have added 3 new 'not null' checks and comments.
+  I have added new 'not null' checks and comments.
 
 - account entity:
   There is a problem with the date account_opening_date. I replaced empty strings with null values.
 
-  I have added 2 new 'not null' checks and comments.
+  I have added new 'not null' checks and comments.
 
   There's one entry with an empty string which is detected by a new automatic test.
 
 - fx_rates entity:
   In the model stg_raw_staging__fx_rates the data types of the columns fx_rate and fx_rate_date seems to be wrong. I changed them. 
-  In addition I have added 2 new 'not null' checks and comments for the columns.
+  In addition I have added new 'not null' checks and comments for the columns.
   I changed the data type for stg_reporting__aggregate_transactions from varchar to float and fx_rate_date to date.
 
 - loans entity:
@@ -49,8 +49,8 @@ I found a lot of things in the given data and structure. Here are the main point
   select currency_iso_code, count(*) from main.currencies group by currency_iso_code having count()>1;
   --> (none)=12 and USD=2
 
-  All models with usage of the iso currency code use thius model in their constraints.
+  All models with usage of the iso currency code use this model in their constraints.
 
 ## Final note
 One suggestion for an improvement for other studies is to pay attention to the libraries for Macbook users. With duckdb, I got an error at the beginning.
-I have added the new automatic tests to both the staging and intermediate layer. Better safe than sorry. Only the singular tests (own sql file) are not implemented on the staging layer.
+I have added the new automatic tests to both the staging and intermediate layer. Better safe than sorry. Only the singular tests (own sql file) are not implemented in the staging layer.

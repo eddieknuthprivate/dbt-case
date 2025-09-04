@@ -8,7 +8,7 @@ with source as (
 renamed as (
 
     select
-        currency_iso_code,
+        trim(currency_iso_code) as currency_iso_code,
         cast(replace(fx_rate,',','.') as float) as fx_rate,
         cast(strptime(date, '%d.%m.%Y') as date) as fx_rate_date
 

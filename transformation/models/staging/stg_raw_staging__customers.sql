@@ -8,8 +8,8 @@ renamed as (
 
     select
         customer_id,
-        firstname,
-        lastname,
+        trim(firstname) as firstname,
+        trim(lastname) as lastname,
         Age as 'age'
 
     from source

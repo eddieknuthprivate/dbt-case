@@ -6,6 +6,6 @@
 }}
 
 select 
-    currency_iso_code
-    , currency  
+    trim(currency_iso_code) as currency_iso_code
+    , trim(currency) as currency 
 from {{ ref("currencies") }}
