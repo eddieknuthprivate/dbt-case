@@ -16,4 +16,6 @@ renamed as (
 
 )
 
-select * from renamed
+select 
+    distinct * 
+from renamed

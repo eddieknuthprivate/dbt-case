@@ -29,7 +29,7 @@ models:
 
       - name: loan_type
         data_type: varchar
-        description: "The type of the loan."
+        description: "The type of the loan (e.g. personal or auto)."
 
       - name: interest_rate
         data_type: float

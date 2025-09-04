@@ -12,9 +12,15 @@ renamed as (
         account_id,
         customer_id,
         account_type,
-        strptime(replace(account_opening_date, '', null), '%d.%m.%Y') as account_opening_date
-
-    from source
+        cast(null as date) as account_opening_date
+    from source where account_opening_date = ''
+    union all
+    select
+        account_id,
+        customer_id,
+        account_type,
+        cast(strptime(account_opening_date, '%d.%m.%Y') as date) as account_opening_date
+    from source where account_opening_date != ''
 
 )
 

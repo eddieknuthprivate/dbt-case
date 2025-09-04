@@ -10,7 +10,7 @@ renamed as (
         customer_id,
         loan_id,
         cast(replace(loan_amount,',','.') as float) as loan_amount,
-        loant_type,
+        loant_type as loan_type,
         cast(replace(interest_rate,',','.') as float) as interest_rate,
         loan_term,
         cast(strptime(approval_rejection_date, '%d.%m.%Y')as date) as approval_rejection_date,
@@ -19,12 +19,12 @@ renamed as (
     from source
     where approval_rejection_date not like '%/%'
 
-    union
+    union all
     select
         customer_id,
         loan_id,
         cast(replace(loan_amount,',','.') as float) as loan_amount,
-        loant_type,
+        loant_type as loan_type,
         cast(replace(interest_rate,',','.') as float) as interest_rate,
         loan_term,
         cast(strptime(replace(approval_rejection_date, '/', '.'), '%m.%d.%Y') as date) as approval_rejection_date,

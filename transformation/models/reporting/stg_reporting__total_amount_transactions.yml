@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_reporting__total_amount_transactions
+    description: "This table contains sums(amount) of the transactions in Euro per customer, account, branch and date."
+
+    columns:
+      - name: customer_id
+        data_type: integer
+        description: "The identifier of the customer"
+        constraints:
+          - type: foreign_key
+            to: ref('stg_stg_intermediate__customers')
+            to_columns: customer_id
+        tests:
+          - not_null
+
+      - name: account_id
+        data_type: integer
+        description: "Contains the identifier of the account."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_intermediate__accounts')
+            to_columns: account_id
+        tests:
+          - not_null
+
+      - name: branch
+        data_type: varchar
+        description: "Contains the branch (transaction type)."
+        constraints:
+          - type: foreign_key
+            to: ref('stg_intermediate__transactions')
+            to_columns: transaction_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['deposit', 'transfer', 'withdrawal']
+
+      - name: fx_rate_date
+        data_type: date
+        description: "Contains the date of the fx rate."
+        tests:
+          - not_null
+
+      - name: total_transaction_amount_eur
+        data_type: double
+        description: "Contains the sum of the transaction amount in Euro."
+        tests:
+          - not_null

@@ -34,6 +34,8 @@ models:
         description: "Contains the type of transaction"
         tests:
           - not_null
+          - accepted_values:
+              values: ['deposit', 'transfer', 'withdrawal']
 
       - name: transaction_amount
         data_type: float

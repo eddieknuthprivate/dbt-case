@@ -2,16 +2,14 @@
 
 ## Introduction
 
-Dear applicant,
-
-Thank you for all the work with the study.
+Thank you very much for this study. I really enjoyed working on it and it gave me the opportunity to get knowledge about the duckdb.
 
 The following changes are made:
 - For all the fixes, constraints, comments and tests see EXPLORATION.md
 - Data enrichment with help of currencies.csv
-- Implementation of incremental models for the intermediate layer (data warehouse)
+- Implementation of incremental models for the intermediate layer (data warehouse). This is better than to use normal models because we can build a history. 
 - New model in the reporting layer
-- Created sql-tests for the models in the intermediate and reporting layer 
+- Created sql tests for the models in the intermediate and reporting layer 
 - The data catalog is generated here /workspaces/dbt-case/transformation/target/catalog.json
 
 Have a nice day,
@@ -59,7 +57,7 @@ help...
 
 **Submission:**
 
-- [ ] Please send us a link to your repository
+- [X] Please send us a link to your repository
 
 </details>
 
