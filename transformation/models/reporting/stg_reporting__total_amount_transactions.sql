@@ -6,6 +6,7 @@
 
 /*  Sums up all transactions in EUR (Euro) per customer, account, branch and date. 
  *  To simplify everything, the provided exchange rate table should be used for all dates. 
+ *  -> leads to fx_rate_date instead of transaction_date in the output.
  *  I assume that the branch is the transaction_type.
  *  As a precaution, the configuration is set to 'table' as requested.
  */
