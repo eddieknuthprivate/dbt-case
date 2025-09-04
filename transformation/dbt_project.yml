@@ -38,9 +38,9 @@ models:
     
 seeds:
   vg_casestudy: 
-    +delimiter: "," # default delimiter for seeds in jaffle_shop project will be ","
+    +delimiter: "," # default delimiter for seeds in vg_casestudy project will be ","
     currencies:
-      +delimiter: ";" # delimiter for seed_a will be ","
+      +delimiter: ";" # delimiter for currencies will be ";"
 
 vars:
   "dbt_date:time_zone": "Europe/Berlin"
