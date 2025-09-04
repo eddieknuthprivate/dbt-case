@@ -36,11 +36,11 @@ models:
       +schema: main
       +materialized: table
     
-seeds:
-  vg_casestudy: 
-    +delimiter: "," # default delimiter for seeds in vg_casestudy project will be ","
-    currencies:
-      +delimiter: ";" # delimiter for currencies will be ";"
+#seeds:
+#  vg_casestudy: 
+#    +delimiter: "," # default delimiter for seeds in vg_casestudy project will be ","
+#    currencies:
+#      +delimiter: ";" # delimiter for currencies will be ";"
 
 vars:
   "dbt_date:time_zone": "Europe/Berlin"
