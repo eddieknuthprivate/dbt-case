@@ -10,7 +10,8 @@ The following changes are made:
 - Implementation of incremental models for the intermediate layer (data warehouse). This is better than to use normal models because we can build a history. 
 - New model in the reporting layer
 - Created sql tests for the models in the intermediate and reporting layer 
-- The data catalog is stored in the folder data/catalog.json (folder where erd.png is saved). I copied it from the target directory.
+- The data catalog is stored in the folder data/catalog.json. Link to show it in github is here https://eddieknuthprivate.github.io/dbt-case/#!/overview
+
 
 Have a nice day,
 Eddie Knuth
