@@ -1,4 +1,4 @@
-# Case Study at Varengold Bank AG - Data Engineering
+# Dbt program
 
 ## Introduction
 
