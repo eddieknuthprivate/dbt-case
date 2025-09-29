@@ -2,8 +2,6 @@
 
 ## Introduction
 
-Thank you very much for this study. I really enjoyed working on it and it gave me the opportunity to get knowledge about the duckdb.
-
 The following changes are made:
 - For all the fixes, constraints, comments and tests see EXPLORATION.md
 - Data enrichment with help of currencies.csv
